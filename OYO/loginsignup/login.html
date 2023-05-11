@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+
+<body>
+    <div class="container">
+        <form onsubmit="return verifyPassword()" action="" class="form-container">
+            <span class="title">Login Form</span>
+            <input type="text" name="" id="" placeholder="Username" required>
+            <input type="password" name="" id="pswd" placeholder="Password" required>
+            <span id = "message" style="color:red"> </span>
+            <p class="para"><a class="text" href="#">Forget Password?</a></p>
+            <button class="login-btn" type="submit" value="Submit"><a class="button-white" href="../project/navbar.html">Log-In</a></button>
+            <span class="text">Or log in with</span>
+            <div class="fb-ig">
+                <button class="social-btn btn1">
+                    <a href="https://www.facebook.com" class="fa fa-facebook-official handle fb-handle" target="_blank"
+                        aria-hidden="true">&nbsp;facebook</a>
+                </button>
+                <button class="social-btn btn2">
+                    <a href="https://www.instagram.com" class="fa fa-instagram  handle twitter-handle" target="_blank"
+                        aria-hidden="true">&nbsp;instagram</a>
+                </button>
+            </div>
+            <span class="text">
+                Don't have an account?
+                <a href="signup.html"> Sign up</a>
+            </span>
+        </form>
+    </div>
+
+    <script>
+
+
+        function verifyPassword() {
+            var pw = document.getElementById("pswd").value;
+            //check empty password field  
+            if (pw == "") {
+                document.getElementById("message").innerHTML = "**Fill the password please!";
+                return false;
+            }
+
+            //minimum password length validation  
+            if (pw.length < 8) {
+                document.getElementById("message").innerHTML = "**Password length must be atleast 8 characters";
+                return false;
+            }
+
+            //maximum length of password validation  
+            if (pw.length > 15) {
+                document.getElementById("message").innerHTML = "**Password length must not exceed 15 characters";
+                return false;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
